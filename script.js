@@ -784,21 +784,14 @@ const cookieAccept  = document.getElementById('cookieAccept');
 const cookieDecline = document.getElementById('cookieDecline');
 
 function loadAnalytics() {
-  /*
-    Paste your Google Analytics snippet here after accepting cookies.
-    Example (replace G-XXXXXXXXXX with your Measurement ID):
-
-    const s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-    s.async = true;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-
-    Same pattern works for Yandex.Metrica.
-  */
+  const s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-4SV24BFHCH';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-4SV24BFHCH');
 }
 
 function hideCookieBanner() {

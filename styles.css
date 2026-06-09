@@ -743,6 +743,43 @@ em { font-style: italic; color: var(--sage); }
 }
 .reviews-track::-webkit-scrollbar { display: none; }
 
+.discovery-callout {
+  background: var(--sage-light);
+  border: 1px solid var(--sage);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+.discovery-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.discovery-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--brown-deep);
+  margin-bottom: 6px;
+}
+.discovery-text {
+  font-size: 0.9rem;
+  color: var(--brown-mid);
+  line-height: 1.6;
+  max-width: 480px;
+}
+.discovery-callout .btn-outline {
+  white-space: nowrap;
+  flex-shrink: 0;
+  border-color: var(--sage);
+  color: var(--sage);
+}
+.discovery-callout .btn-outline:hover {
+  background: var(--sage);
+  color: var(--white);
+}
+
 .carousel-btn {
   flex-shrink: 0;
   width: 42px;

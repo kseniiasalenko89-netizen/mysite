@@ -1,0 +1,5 @@
+# Replace yoursite.com with your real domain before publishing
+User-agent: *
+Allow: /
+
+Sitemap: https://yoursite.com/sitemap.xml

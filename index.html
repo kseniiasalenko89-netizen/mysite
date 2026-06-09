@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Kseniia Salenko — Thai Massage, Yoga & Ayurveda</title>
+  <meta name="description" content="Individual sessions of Thai massage, yoga and Ayurveda therapy. Certified practitioner. Book online." />
+  <link rel="canonical" href="https://yoursite.com/" />
+
+  <!-- hreflang EN/RU -->
+  <link rel="alternate" hreflang="en" href="https://yoursite.com/" />
+  <link rel="alternate" hreflang="ru" href="https://yoursite.com/?lang=ru" />
+  <link rel="alternate" hreflang="x-default" href="https://yoursite.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yoursite.com/" />
+  <meta property="og:title" content="Thai Massage, Yoga & Ayurveda — Individual Sessions" />
+  <meta property="og:description" content="Personal healing sessions tailored to your body and goals. Book online." />
+  <meta property="og:image" content="https://yoursite.com/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!--
+    ═══ EMAILJS SETUP ═══════════════════════════════════════════
+    1. Sign up at https://www.emailjs.com (free — 200 emails/mo)
+    2. Add an Email Service (Gmail / Outlook / etc.)
+    3. Create an Email Template with these variables:
+         {{from_name}}  — sender's name
+         {{reply_to}}   — sender's email or phone
+         {{message}}    — their message
+         {{region}}     — their selected region/currency
+    4. Go to Account → Public Key
+    5. Replace the three placeholder values below:
+         YOUR_PUBLIC_KEY   → Account → Public Key
+         YOUR_SERVICE_ID   → Email Services → Service ID
+         YOUR_TEMPLATE_ID  → Email Templates → Template ID
+    ═══════════════════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('L7wDfiGiukAEZjXJQ');</script>
+
+  <!-- Schema.org: Individual Practitioner -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Person", "HealthAndBeautyBusiness"],
+    "@id": "https://yoursite.com/#practitioner",
+    "name": "Kseniia Salenko",
+    "jobTitle": "Thai Massage Practitioner, Yoga Teacher & Ayurvedic Consultant",
+    "description": "Certified Thai massage practitioner and yoga teacher drawing on Tibetan yoga, the Yoga Sutras, and Ayurvedic wisdom to offer individual body-centred sessions online.",
+    "url": "https://yoursite.com",
+    "telephone": "+79515665109",
+    "email": "kseniia.salenko89@gmail.com",
+    "image": "https://yoursite.com/photo.jpg",
+    "knowsAbout": ["Thai Massage", "Yoga", "Ayurveda", "Tibetan Yoga", "Yoga Sutras", "Holistic Healing", "Body-Mind Connection"],
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "name": "Traditional Thai Massage Certification, Chiang Mai, Thailand" },
+      { "@type": "EducationalOccupationalCredential", "name": "Song of the Inner Wind — Lady Niguma Programme, Yoga Studies Institute (2025)" },
+      { "@type": "EducationalOccupationalCredential", "name": "Yoga Sutra Chapter 2, Yoga Studies Institute (2025)" }
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "20:00" }
+    ],
+    "priceRange": "€€",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav-wrapper" id="navbar">
+    <nav class="nav container">
+      <a href="#hero" class="logo" data-t="your_name">Your Name</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#services" data-t="nav_services">Services</a></li>
+        <li><a href="#pricing"  data-t="nav_pricing">Pricing</a></li>
+        <li><a href="#reviews"  data-t="nav_reviews">Reviews</a></li>
+        <li><a href="#booking"  class="nav-cta" data-t="nav_book">Book a Session</a></li>
+      </ul>
+      <div class="nav-right">
+        <!-- Region / Currency selector -->
+        <div class="region-selector" id="regionSelector">
+          <button class="region-btn" id="regionBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select region and currency">
+            <span id="regionFlag">🇪🇺</span>
+            <span id="regionCode">EUR</span>
+            <span class="region-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="region-dropdown" id="regionDropdown" role="listbox" hidden>
+            <li class="region-opt" role="option" data-region="eu">🇪🇺 <span data-rt="eu_label">Europe</span><span class="ropt-code">EUR €</span></li>
+            <li class="region-opt" role="option" data-region="ru">🇷🇺 <span data-rt="ru_label">Russia</span><span class="ropt-code">RUB ₽</span></li>
+            <li class="region-opt" role="option" data-region="us">🇺🇸 <span data-rt="us_label">USA</span><span class="ropt-code">USD $</span></li>
+            <li class="region-opt" role="option" data-region="gb">🇬🇧 <span data-rt="gb_label">UK</span><span class="ropt-code">GBP £</span></li>
+            <li class="region-opt" role="option" data-region="ae">🇦🇪 <span data-rt="ae_label">UAE</span><span class="ropt-code">AED</span></li>
+            <li class="region-opt" role="option" data-region="ch">🇨🇭 <span data-rt="ch_label">Switzerland</span><span class="ropt-code">CHF</span></li>
+            <li class="region-opt" role="option" data-region="au">🇦🇺 <span data-rt="au_label">Australia</span><span class="ropt-code">AUD</span></li>
+            <li class="region-opt" role="option" data-region="nz">🇳🇿 <span data-rt="nz_label">New Zealand</span><span class="ropt-code">NZD</span></li>
+          </ul>
+        </div>
+        <button class="lang-btn" id="langBtn" aria-label="Switch language">RU</button>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-hidden="true">
+      <a href="#services" data-t="nav_services">Services</a>
+      <a href="#pricing"  data-t="nav_pricing">Pricing</a>
+      <a href="#reviews"  data-t="nav_reviews">Reviews</a>
+      <a href="#booking"  data-t="nav_book">Book a Session</a>
+    </div>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow" data-t="hero_eyebrow">Thai Massage · Yoga · Ayurveda</p>
+        <h1 class="hero-title" data-t="hero_title">Healing that fits<br><em>your</em> body and life.</h1>
+        <p class="hero-desc" data-t="hero_desc">Individual sessions rooted in authentic Thai, yoga and Ayurvedic traditions — tailored to your goals, your pace, your needs.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary" data-t="hero_cta">Book a Session</a>
+          <a href="#services" class="btn btn-ghost" data-t="hero_learn">Explore services</a>
+        </div>
+        <div class="trust-bar" role="list">
+          <div class="trust-item" role="listitem">
+            <span class="trust-icon">🎓</span>
+            <span data-t="trust_1">Certified practitioner</span>
+          </div>
+          <div class="trust-item" role="listitem">
+            <span class="trust-icon">✦</span>
+            <span data-t="trust_2">5+ years experience</span>
+          </div>
+          <div class="trust-item" role="listitem">
+            <span class="trust-icon">🌿</span>
+            <span data-t="trust_3">Individual approach</span>
+          </div>
+          <div class="trust-item" role="listitem">
+            <span class="trust-icon">🌸</span>
+            <a href="https://www.jaiwellness.com" target="_blank" rel="noopener noreferrer" data-t="trust_4">Jai Yoga &amp; Ayurveda, 2024</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame">
+          <img
+            src="photo.jpg"
+            alt="Kseniia Salenko — Thai massage practitioner, yoga teacher and Ayurveda consultant"
+            class="practitioner-photo"
+            width="420"
+            height="560"
+            fetchpriority="high"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <!-- shown only if photo.jpg is missing -->
+          <div class="photo-fallback" style="display:none">
+            <div class="photo-initials" aria-hidden="true">KS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="section about">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <p class="section-label" data-t="about_label">About Me</p>
+        <h2 class="section-title" data-t="about_title">My path to healing</h2>
+        <p data-t="about_p1">My journey began with my own search for balance — burnout, back pain, a body that felt disconnected from who I was inside. Traditional Thai massage was the first thing that truly helped. I went to Chiang Mai to learn it properly, and never looked back.</p>
+        <p data-t="about_p2">Today I combine three disciplines that work together beautifully: the precise bodywork of Thai massage, the breath and movement of yoga, and the constitutional wisdom of Ayurveda. Every session I offer is shaped around one person — you.</p>
+        <div class="certs" role="list">
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_1">Traditional Thai Massage — Chiang Mai, Thailand</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_2">200h RYT — Yoga Alliance Certified</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_3">Ayurvedic Health Advisor Certificate</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_4">Yoga Studies Institute — Yoga Sutra Chapter 1 (2024)</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_5">Jai Yoga and Ayurveda — 200hr Holistic Yoga, Ayurveda & Shamanism Teacher Training (2024)</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_6">Acupressure, Meridians &amp; Traditional Chinese Medicine (2024)</span>
+          </div>
+          <div class="cert-item" role="listitem">
+            <span class="cert-dot">✓</span>
+            <span data-t="cert_7">Wudang Mountains Tao Temple — Internal Arts &amp; Qigong, China (2026)</span>
+          </div>
+        </div>
+        <a href="#booking" class="btn btn-outline" data-t="about_cta">Book a consultation</a>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-card">
+          <span class="stat-num">3+</span>
+          <span class="stat-label" data-t="stat_years">years of practice</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">60</span>
+          <span class="stat-label" data-t="stat_clients">clients helped</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">40</span>
+          <span class="stat-label" data-t="stat_reviews">5-star reviews</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">4</span>
+          <span class="stat-label" data-t="stat_modalities">healing modalities</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="services_label">What I Offer</p>
+        <h2 class="section-title" data-t="services_title">Services</h2>
+      </div>
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🌿</div>
+          <h3 data-t="s1_title">Thai Massage</h3>
+          <p data-t="s1_desc">Traditional Thai bodywork combining acupressure, assisted yoga stretches and energy line work — done fully clothed, no oils. Releases deep tension, restores circulation and energy flow.</p>
+          <ul class="service-benefits" role="list">
+            <li data-t="s1_b1">Full-body energy balancing</li>
+            <li data-t="s1_b2">Deep muscle tension release</li>
+            <li data-t="s1_b3">Improved flexibility & posture</li>
+            <li data-t="s1_b4">Effective for chronic back & neck pain</li>
+          </ul>
+          <div class="service-price-hint">
+            <span data-t="s1_from">from</span> <strong data-price-min="thai">60 €</strong>
+            <a href="#pricing" class="service-price-link" data-t="see_all_prices">see all prices →</a>
+          </div>
+        </article>
+
+        <article class="service-card service-card--featured reveal">
+          <div class="service-badge" data-t="badge_popular">Most Popular</div>
+          <div class="service-icon" aria-hidden="true">🧘</div>
+          <h3 data-t="s2_title">Yoga Sessions</h3>
+          <p data-t="s2_desc">One-on-one yoga practice shaped entirely around you — your body, your level, your goals. Whether you need gentle restoration or an active flow, each session is different.</p>
+          <ul class="service-benefits" role="list">
+            <li data-t="s2_b1">Hatha, Vinyasa & Yin styles</li>
+            <li data-t="s2_b2">Breathwork (pranayama) included</li>
+            <li data-t="s2_b3">Guided meditation option</li>
+            <li data-t="s2_b4">All levels — beginner to advanced</li>
+          </ul>
+          <div class="service-price-hint">
+            <span data-t="s1_from">from</span> <strong data-price-min="yoga">50 €</strong>
+            <a href="#pricing" class="service-price-link" data-t="see_all_prices">see all prices →</a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🌸</div>
+          <h3 data-t="s3_title">Ayurveda Therapy</h3>
+          <p data-t="s3_desc">Ancient Indian system of healing built around your unique constitutional type (dosha). I combine herbal oil treatments, lifestyle guidance and hands-on bodywork into a personalised ritual.</p>
+          <ul class="service-benefits" role="list">
+            <li data-t="s3_b1">Dosha assessment & consultation</li>
+            <li data-t="s3_b2">Abhyanga warm oil massage</li>
+            <li data-t="s3_b3">Shirodhara head oil treatment</li>
+            <li data-t="s3_b4">Personalised lifestyle guidance</li>
+          </ul>
+          <div class="service-price-hint">
+            <span data-t="s1_from">from</span> <strong data-price-min="ayur">40 €</strong>
+            <a href="#pricing" class="service-price-link" data-t="see_all_prices">see all prices →</a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">🌊</div>
+          <h3 data-t="s4_title">Energy &amp; Somatic Practices</h3>
+          <p data-t="s4_desc">Body-centred practices that work with the nervous system, breath and unconscious patterns held in the body. Rooted in qigong and somatic awareness — helping release what talk alone cannot reach. Restores clarity, presence and inner balance.</p>
+          <ul class="service-benefits" role="list">
+            <li data-t="s4_b1">Regulates the nervous system</li>
+            <li data-t="s4_b2">Releases stress &amp; patterns stored in the body</li>
+            <li data-t="s4_b3">Supports emotional clarity &amp; resilience</li>
+            <li data-t="s4_b4">No prior experience needed</li>
+          </ul>
+          <div class="service-price-hint">
+            <span data-t="s1_from">from</span> <strong data-price-min="somat">40 €</strong>
+            <a href="#pricing" class="service-price-link" data-t="see_all_prices">see all prices →</a>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">✦</div>
+          <h3 data-t="s5_title">Integrative Programme</h3>
+          <p data-t="s5_desc">When one method isn't enough. I combine Thai massage, yoga, Ayurveda and somatic practices — drawing on whatever serves your body most right now. Each session is shaped around you, not a fixed protocol.</p>
+          <ul class="service-benefits" role="list">
+            <li data-t="s5_b1">Tailored to your body's current needs</li>
+            <li data-t="s5_b2">Combines 2–4 modalities in one session</li>
+            <li data-t="s5_b3">Works on physical, mental &amp; energetic levels</li>
+            <li data-t="s5_b4">Ideal for complex or long-standing conditions</li>
+          </ul>
+          <div class="service-price-hint">
+            <span data-t="s1_from">from</span> <strong data-price-min="integ">40 €</strong>
+            <a href="#pricing" class="service-price-link" data-t="see_all_prices">see all prices →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="section how">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="how_label">Simple Process</p>
+        <h2 class="section-title" data-t="how_title">How It Works</h2>
+      </div>
+      <div class="how-steps">
+        <div class="how-step reveal">
+          <div class="how-num" aria-hidden="true">1</div>
+          <h3 data-t="how_s1_title">Book online</h3>
+          <p data-t="how_s1_desc">Choose your service and pick a time that works for you using the booking calendar. You'll receive a confirmation immediately.</p>
+        </div>
+        <div class="how-arrow" aria-hidden="true">→</div>
+        <div class="how-step reveal">
+          <div class="how-num" aria-hidden="true">2</div>
+          <h3 data-t="how_s2_title">Short intake chat</h3>
+          <p data-t="how_s2_desc">Before your first session we have a brief conversation about your health, goals and what you're looking for. No forms, no paperwork.</p>
+        </div>
+        <div class="how-arrow" aria-hidden="true">→</div>
+        <div class="how-step reveal">
+          <div class="how-num" aria-hidden="true">3</div>
+          <h3 data-t="how_s3_title">Your session</h3>
+          <p data-t="how_s3_desc">Arrive, relax, and let the work happen. Every session is adjusted in real time to what your body needs that day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING ═══ -->
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="pricing_label">Transparent Pricing</p>
+        <h2 class="section-title" data-t="pricing_title">Rates</h2>
+        <div class="pricing-currency-badge" id="pricingBadge">
+          <span id="badgeFlag">🇪🇺</span>
+          <span data-t="prices_shown_in">Prices shown in</span>
+          <strong id="badgeCurrency">EUR €</strong>
+        </div>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="price-card reveal">
+          <h3 data-t="s1_title">Thai Massage</h3>
+          <div class="price-rows">
+            <div class="price-row"><span data-t="p_feet">Foot massage with acupressure (30 min)</span><span class="price-val" data-price="thai_feet">20 €</span></div>
+            <div class="price-row"><span data-t="p_face">Face massage (30 min)</span><span class="price-val" data-price="thai_face">20 €</span></div>
+            <div class="price-row price-row--highlight"><span data-t="p_body_90">Full body Thai massage (90 min)</span><span class="price-val" data-price="thai_body">50 €</span></div>
+          </div>
+          <a href="#booking" class="btn btn-outline btn-sm" data-t="btn_book_now">Book Now</a>
+        </div>
+
+        <div class="price-card reveal">
+          <h3 data-t="s2_title">Yoga Sessions</h3>
+          <div class="price-rows">
+            <div class="price-row"><span data-t="p_single">Individual hatha yoga (75 min)</span><span class="price-val" data-price="yoga_single">50 €</span></div>
+            <div class="price-row"><span data-t="p_pack5">Package × 5 sessions</span><span class="price-val" data-price="yoga_pack5">225 €</span></div>
+            <div class="price-row"><span data-t="p_pack10">Package × 10 sessions</span><span class="price-val" data-price="yoga_pack10">425 €</span></div>
+            <div class="price-row price-row--highlight"><span data-t="p_monthly">Monthly — 4 sessions</span><span class="price-val" data-price="yoga_monthly">170 €</span></div>
+          </div>
+          <a href="#booking" class="btn btn-outline btn-sm" data-t="btn_book_now">Book Now</a>
+        </div>
+
+        <div class="price-card reveal">
+          <h3 data-t="s3_title">Ayurveda Therapy</h3>
+          <div class="price-rows">
+            <div class="price-row"><span data-t="p_initial">Initial consultation</span><span class="price-val" data-price="ayur_initial">70 €</span></div>
+            <div class="price-row"><span data-t="p_followup">Follow-up consultation</span><span class="price-val" data-price="ayur_followup">40 €</span></div>
+            <div class="price-row"><span data-t="p_pack4">Package × 4 sessions</span><span class="price-val" data-price="ayur_pack4">147 €</span></div>
+            <div class="price-row price-row--highlight"><span data-t="p_pack8">Package × 8 sessions</span><span class="price-val" data-price="ayur_pack8">280 €</span></div>
+          </div>
+          <a href="#booking" class="btn btn-outline btn-sm" data-t="btn_book_now">Book Now</a>
+        </div>
+
+        <div class="price-card reveal">
+          <h3 data-t="s4_title">Energy &amp; Somatic Practices</h3>
+          <div class="price-rows">
+            <div class="price-row"><span data-t="p_initial">Initial consultation</span><span class="price-val" data-price="somat_initial">70 €</span></div>
+            <div class="price-row"><span data-t="p_followup">Follow-up consultation</span><span class="price-val" data-price="somat_followup">40 €</span></div>
+            <div class="price-row"><span data-t="p_pack4">Package × 4 sessions</span><span class="price-val" data-price="somat_pack4">147 €</span></div>
+            <div class="price-row price-row--highlight"><span data-t="p_pack8">Package × 8 sessions</span><span class="price-val" data-price="somat_pack8">280 €</span></div>
+          </div>
+          <a href="#booking" class="btn btn-outline btn-sm" data-t="btn_book_now">Book Now</a>
+        </div>
+
+        <div class="price-card reveal">
+          <h3 data-t="s5_title">Integrative Programme</h3>
+          <div class="price-rows">
+            <div class="price-row"><span data-t="p_initial">Initial consultation</span><span class="price-val" data-price="integ_initial">70 €</span></div>
+            <div class="price-row"><span data-t="p_followup">Follow-up consultation</span><span class="price-val" data-price="integ_followup">40 €</span></div>
+            <div class="price-row"><span data-t="p_pack4">Package × 4 sessions</span><span class="price-val" data-price="integ_pack4">147 €</span></div>
+            <div class="price-row price-row--highlight"><span data-t="p_pack8">Package × 8 sessions</span><span class="price-val" data-price="integ_pack8">280 €</span></div>
+          </div>
+          <a href="#booking" class="btn btn-outline btn-sm" data-t="btn_book_now">Book Now</a>
+        </div>
+
+      </div>
+      <p class="pricing-note reveal" data-t="pricing_note">All prices include materials. Home visits available within the city for an additional travel fee. Packages valid for 3 months.</p>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section id="faq" class="section faq">
+    <div class="container faq-inner">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="faq_label">Questions & Answers</p>
+        <h2 class="section-title" data-t="faq_title">FAQ</h2>
+      </div>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q1">Do I need to undress for Thai massage?</button>
+          <div class="faq-a" hidden><p data-t="faq_a1">No. Traditional Thai massage is performed fully clothed in loose, comfortable clothing. I provide a set of cotton trousers and a shirt. This is one of the key differences from European massage styles.</p></div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q2">I've never done yoga before. Can I start with a private session?</button>
+          <div class="faq-a" hidden><p data-t="faq_a2">Absolutely — private sessions are actually the ideal place to start. We go at your pace, I can explain everything clearly, and there's no pressure to keep up with a group. Many of my long-term clients started with zero experience.</p></div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q3">What is Ayurveda and what does a consultation involve?</button>
+          <div class="faq-a" hidden><p data-t="faq_a3">Ayurveda is a 5,000-year-old system of medicine from India that looks at your unique constitutional type (dosha). A consultation involves a conversation about your health, lifestyle, digestion and sleep, followed by personalised recommendations for diet, daily routine and treatments that suit your type.</p></div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q4">How often should I book sessions?</button>
+          <div class="faq-a" hidden><p data-t="faq_a4">For general wellbeing and stress relief, once every 2–4 weeks works well. If you're dealing with chronic pain, tension or a specific health goal, a course of weekly sessions over 4–6 weeks tends to bring the most lasting change. We'll figure out the right rhythm together in your first session.</p></div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q5">Do you offer sessions at my home?</button>
+          <div class="faq-a" hidden><p data-t="faq_a5">Yes. I offer home visits within the city. A travel fee applies depending on distance. For Thai massage I bring a mat; for yoga and Ayurveda sessions I bring all necessary materials. Please mention your location when booking.</p></div>
+        </div>
+
+        <div class="faq-item reveal" role="listitem">
+          <button class="faq-q" aria-expanded="false" data-t="faq_q6">What is your cancellation policy?</button>
+          <div class="faq-a" hidden><p data-t="faq_a6">I ask for at least 24 hours notice to cancel or reschedule. Late cancellations may be charged at 50% of the session fee. I understand that life happens — please just let me know as early as possible.</p></div>
+        </div>
+
+      </div>
+    </div>
+    <!-- FAQ Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need to undress for Thai massage?", "acceptedAnswer": { "@type": "Answer", "text": "No. Thai massage is performed fully clothed — no oils, no undressing. Please come in comfortable trousers (not too wide or too tight) and a t-shirt or light sweatshirt." } },
+        { "@type": "Question", "name": "I've never done yoga before. Can I start with a private session?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Private sessions are the ideal place to start — we go at your pace with no pressure." } },
+        { "@type": "Question", "name": "What is Ayurveda and what does a consultation involve?", "acceptedAnswer": { "@type": "Answer", "text": "Ayurveda is a 5,000-year-old system from India. A consultation looks at your dosha type and gives personalised guidance for diet, routine and treatments." } },
+        { "@type": "Question", "name": "How often should I book sessions?", "acceptedAnswer": { "@type": "Answer", "text": "For general wellbeing once every 2–4 weeks. For specific issues, weekly sessions over 4–6 weeks bring the most change." } },
+        { "@type": "Question", "name": "Do you offer home visits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, within the city with a travel fee. I bring all equipment." } }
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- ═══ REVIEWS ═══ -->
+  <section id="reviews" class="section reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="reviews_label">Client Stories</p>
+        <h2 class="section-title" data-t="reviews_title">What People Say</h2>
+        <div class="reviews-aggregate">
+          <span class="stars-big" aria-label="5 stars">★★★★★</span>
+          <span class="reviews-count" data-t="reviews_count">5.0 · 47 reviews</span>
+        </div>
+      </div>
+      <div class="reviews-carousel">
+        <button class="carousel-btn carousel-prev" aria-label="Previous reviews">&#8249;</button>
+
+        <div class="reviews-track">
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r1_text">"Kseniia's massage is one of a kind. Her energy and love in her gift to heal the body and mind was felt throughout the session. Her powerful intuition helped heal my body in areas I needed in a way I didn't know was possible. I highly recommend her to anyone."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">C</div>
+              <div>
+                <cite class="reviewer-name">Christina</cite>
+                <div class="reviewer-service" data-t="s1_title">Thai Massage</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r2_text">"It was fascinating to watch the body respond — points that felt blocked gradually softened. It became a practice of relaxation, concentration and breath all at once. Afterwards I felt a lightness I hadn't felt before. Even one session renewed and filled me with energy. It was wonderful."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">A</div>
+              <div>
+                <cite class="reviewer-name">Anastasia M.</cite>
+                <div class="reviewer-service" data-t="s1_title">Thai Massage</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r3_text">"I came with no idea what to expect — just trust in Kseniia. Alongside the energy work, I received answers to my questions with an individual approach drawing on Ayurveda and psychology. She has a gift for reading exactly what you need in each moment. Highly recommend."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">O</div>
+              <div>
+                <cite class="reviewer-name">Olesya P.</cite>
+                <div class="reviewer-service" data-t="s4_title">Energy & Somatic Practices</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r4_text">"You created the space for me to fully trust and open up. The massage became an inward journey — you guided my awareness to each part of the body as you worked. Thanks to the therapy throughout the retreat, I felt no back discomfort for a long time after."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">E</div>
+              <div>
+                <cite class="reviewer-name">Elena K.</cite>
+                <div class="reviewer-service" data-t="s1_title">Thai Massage</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r5_text">"I had the joy of experiencing one of Kseniia's massages — exactly what I needed at the right time. She knew right away which areas needed attention and what was causing my pains. The massage was highly effective. The next day I literally felt like a new born! I wholeheartedly recommend Kseniia."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">M</div>
+              <div>
+                <cite class="reviewer-name">Mona</cite>
+                <div class="reviewer-service" data-t="s1_title">Thai Massage</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r6_text">"Every morning I do the practice you gave me. Even before I open my eyes, my body already remembers it. Lightness, inspiration and joy begin to appear — exactly what was missing. So grateful for this — it works even when it's hard to help yourself."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">L</div>
+              <div>
+                <cite class="reviewer-name">Elizaveta N.</cite>
+                <div class="reviewer-service" data-t="s4_title">Energy & Somatic Practices</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r7_text">"I had no idea yoga could be tailored to your body type until I tried Ayur Yoga with Kseniia. Every movement actually makes sense for how my body is built. I leave each session feeling lighter and clearer than when I arrived."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">I</div>
+              <div>
+                <cite class="reviewer-name">Irina S.</cite>
+                <div class="reviewer-service" data-t="s2_title">Yoga Sessions</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r8_text">"Lady Niguma yoga is unlike anything I've practiced before. There's a stillness in it I don't find anywhere else. Kseniia holds the session with such care — it feels less like exercise and more like coming home to yourself."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">S</div>
+              <div>
+                <cite class="reviewer-name">Sofia</cite>
+                <div class="reviewer-service" data-t="s2_title">Yoga Sessions</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p data-t="r9_text">"I came completely burnt out — not sure yoga could help. The restorative sessions and breathwork literally reset my nervous system. After a few weeks I was sleeping properly for the first time in months. I didn't expect that at all."</p>
+            <footer>
+              <div class="reviewer-avatar" aria-hidden="true">V</div>
+              <div>
+                <cite class="reviewer-name">Vera K.</cite>
+                <div class="reviewer-service" data-t="s2_title">Yoga Sessions</div>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Next reviews">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BOOKING ═══ -->
+  <section id="booking" class="section booking">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label" data-t="booking_label">Reserve Your Spot</p>
+        <h2 class="section-title" data-t="booking_title">Book a Session</h2>
+        <p class="section-desc" data-t="booking_desc">Choose a time directly in my calendar — it syncs with Google Calendar automatically.</p>
+      </div>
+
+      <div class="booking-layout">
+
+        <!-- PRIMARY: Calendar widget -->
+        <div class="cal-block reveal">
+          <!--
+            SETUP INSTRUCTIONS (Calendly — free plan):
+            1. Sign up at calendly.com
+            2. Connect your Google Calendar in Settings → Calendar Connections
+            3. Create an event type (e.g. "Thai Massage 60 min")
+            4. Replace YOUR_CALENDLY_LINK below with your Calendly username/event
+
+            Alternative: SimplyBook.me (free for wellness, has Google Calendar sync)
+            Or: Cal.com (open-source, free self-hostable)
+          -->
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/kseniia-salenko89/30min?hide_gdpr_banner=1"
+               style="min-width:320px;height:660px;border:0;">
+          </div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+        <!-- SECONDARY: Manual contact -->
+        <div class="booking-sidebar">
+          <div class="contact-card reveal">
+            <h3 data-t="contact_title">Or get in touch directly</h3>
+            <!-- WhatsApp — shown for all regions except Russia -->
+            <a href="https://wa.me/306970242820" class="contact-item" id="contactWhatsApp"
+               target="_blank" rel="noopener" aria-label="WhatsApp">
+              <span class="contact-icon" aria-hidden="true">💬</span>
+              <div>
+                <span>WhatsApp</span>
+                <span class="contact-sub">+30 6970 242 820</span>
+              </div>
+            </a>
+            <!-- Phone for Russia — SMS / messages only -->
+            <div class="contact-item" id="contactRuPhone" style="display:none">
+              <span class="contact-icon" aria-hidden="true">📱</span>
+              <div>
+                <span>+7 951 566-51-09</span>
+                <span class="contact-sub" data-t="contact_ru_hint">SMS · Telegram</span>
+              </div>
+            </div>
+            <a href="mailto:kseniia.salenko89@gmail.com" class="contact-item" aria-label="Email">
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <span>kseniia.salenko89@gmail.com</span>
+            </a>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">🌐</span>
+              <span data-t="contact_online">Online · Worldwide</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">🕐</span>
+              <span data-t="contact_hours">Mon–Sat · 9:00–20:00</span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <p class="form-intro" data-t="form_intro">Can't find a good time? Send me a message:</p>
+            <div class="form-group">
+              <label for="fname" data-t="form_name">Name</label>
+              <input type="text" id="fname" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="femail" data-t="form_email">Email or phone</label>
+              <input type="text" id="femail" name="contact" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="fmsg" data-t="form_msg">What are you looking for?</label>
+              <textarea id="fmsg" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" data-t="form_send">Send Message</button>
+            <p class="form-success" id="formSuccess" hidden data-t="form_sent">Message sent! I'll reply within 24 hours.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo" data-t="your_name">Your Name</a>
+        <p data-t="footer_tagline">Thai Massage · Yoga · Ayurveda</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#services" data-t="nav_services">Services</a>
+        <a href="#pricing"  data-t="nav_pricing">Pricing</a>
+        <a href="#faq"      data-t="nav_faq">FAQ</a>
+        <a href="#reviews"  data-t="nav_reviews">Reviews</a>
+        <a href="#booking"  data-t="nav_book">Book</a>
+      </nav>
+      <p class="footer-copy" data-t="footer_copy">© 2026 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ COOKIE BANNER ═══ -->
+  <div class="cookie-banner" id="cookieBanner" hidden role="dialog" aria-live="polite"
+       aria-label="Cookie consent">
+    <div class="cookie-inner container">
+      <p class="cookie-text" data-t="cookie_text">
+        This site uses cookies for analytics to understand how visitors use it.
+        No personal data is sold or shared.
+      </p>
+      <div class="cookie-actions">
+        <button class="btn btn-ghost btn-sm" id="cookieDecline" data-t="cookie_decline">Decline</button>
+        <button class="btn btn-primary btn-sm" id="cookieAccept" data-t="cookie_accept">Accept cookies</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile sticky CTA -->
+  <div class="mobile-sticky-cta" id="mobileCta" aria-hidden="true">
+    <a href="#booking" class="btn btn-primary btn-full" data-t="hero_cta">Book a Session</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

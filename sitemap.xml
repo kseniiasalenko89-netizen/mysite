@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace yoursite.com with your real domain before publishing -->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://yoursite.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en"       href="https://yoursite.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru"       href="https://yoursite.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yoursite.com/"/>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

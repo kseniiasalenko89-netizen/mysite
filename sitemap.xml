@@ -5,10 +5,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://yoursite.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en"       href="https://yoursite.com/"/>
-    <xhtml:link rel="alternate" hreflang="ru"       href="https://yoursite.com/?lang=ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://yoursite.com/"/>
+    <loc>https://fascinating-haupia-21c1a0.netlify.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en"       href="https://fascinating-haupia-21c1a0.netlify.app/"/>
+    <xhtml:link rel="alternate" hreflang="ru"       href="https://fascinating-haupia-21c1a0.netlify.app/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fascinating-haupia-21c1a0.netlify.app/"/>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

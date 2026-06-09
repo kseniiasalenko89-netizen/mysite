@@ -755,7 +755,7 @@ if (contactForm) {
         const body = encodeURIComponent(
           `Name: ${templateParams.from_name}\nContact: ${templateParams.reply_to}\n\n${templateParams.message}`
         );
-        window.location.href = `mailto:hello@yoursite.com?subject=${subj}&body=${body}`;
+        window.location.href = `mailto:kseniia.salenko89@gmail.com?subject=${subj}&body=${body}`;
       } else {
         // Real send error — restore button so user can retry
         submitBtn.disabled = false;

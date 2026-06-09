@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fascinating-haupia-21c1a0.netlify.app/sitemap.xml
+Sitemap: https://kseniiasalenko.com/sitemap.xml

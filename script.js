@@ -181,6 +181,9 @@ const t = {
     s5_b4:            "Ideal for complex or long-standing conditions",
     badge_popular:    "Most Popular",
     see_all_prices:   "see all prices →",
+    fmt_online_only:  "💻 Online only",
+    fmt_inperson_only:"📍 In-person only",
+    fmt_both:         "💻 Online · 📍 In-person",
 
     how_label:        "Simple Process",
     how_title:        "How It Works",
@@ -338,6 +341,9 @@ const t = {
     s5_b4:            "Идеально для комплексных и хронических состояний",
     badge_popular:    "Самое популярное",
     see_all_prices:   "все цены →",
+    fmt_online_only:  "💻 Только онлайн",
+    fmt_inperson_only:"📍 Только офлайн",
+    fmt_both:         "💻 Онлайн · 📍 Офлайн",
 
     how_label:        "Простой процесс",
     how_title:        "Как это работает",

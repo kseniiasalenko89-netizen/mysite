@@ -493,7 +493,25 @@ em { font-style: italic; color: var(--sage); }
   margin-bottom: 16px;
   display: block;
 }
-.service-card h3 { margin-bottom: 12px; }
+.service-card h3 { margin-bottom: 8px; }
+
+.service-format { margin-bottom: 12px; }
+.fmt-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
+.fmt-inperson {
+  background: #f0ebe3;
+  color: var(--brown-mid);
+}
+.fmt-both {
+  background: var(--sage-light);
+  color: var(--sage);
+}
 .service-card p  { font-size: 0.95rem; color: var(--brown-mid); margin-bottom: 20px; }
 
 .service-benefits {

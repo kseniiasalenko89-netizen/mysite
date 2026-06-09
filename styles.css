@@ -976,6 +976,19 @@ a.contact-item:hover { color: var(--brown-deep); }
 }
 .footer-brand p { font-size: 0.8rem; }
 
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+.social-link {
+  color: rgba(250,248,244,0.5);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.social-link:hover { color: var(--cream); }
+
 .footer-links {
   display: flex;
   gap: 24px;

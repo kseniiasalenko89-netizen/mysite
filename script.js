@@ -549,6 +549,14 @@ function applyLang(lang) {
   // Lang button shows opposite language
   document.getElementById('langBtn').textContent = lang === 'en' ? 'RU' : 'EN';
 
+  // Switch Instagram link based on language
+  const igLink = document.getElementById('socialInstagram');
+  if (igLink) {
+    igLink.href = lang === 'ru'
+      ? 'https://www.instagram.com/ksenia_salenko/'
+      : 'https://www.instagram.com/kseniiasalenko/';
+  }
+
   // Auto-switch region: RU lang → RU rubles; back to EN → restore to EU if was RU
   if (lang === 'ru' && currentRegion !== 'ru') {
     applyRegion('ru');

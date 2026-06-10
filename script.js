@@ -861,6 +861,41 @@ applyLang(currentLang);
 initCookieBanner();
 
 /* ═══════════════════════════════════════
+   AUTO-DETECT LOCATION (first visit only)
+═══════════════════════════════════════ */
+async function detectLocation() {
+  if (localStorage.getItem('lang') || localStorage.getItem('region')) return;
+
+  const browserLang = (navigator.language || 'en').toLowerCase();
+  const lang = browserLang.startsWith('ru') ? 'ru' : 'en';
+
+  const countryToRegion = {
+    RU: 'ru', BY: 'ru', KZ: 'ru', UA: 'ru',
+    GB: 'gb',
+    US: 'us', CA: 'us', MX: 'us',
+    AE: 'ae', SA: 'ae', QA: 'ae', KW: 'ae', BH: 'ae',
+    CH: 'ch',
+    AU: 'au',
+    NZ: 'nz',
+  };
+  const countryToLang = { RU: 'ru', BY: 'ru', KZ: 'ru' };
+
+  try {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 3000);
+    const res  = await fetch('https://api.country.is/', { signal: controller.signal });
+    const { country } = await res.json();
+    const detectedRegion = countryToRegion[country] || 'eu';
+    const detectedLang   = countryToLang[country]   || lang;
+    applyRegion(detectedRegion, false);
+    applyLang(detectedLang);
+  } catch {
+    applyLang(lang);
+  }
+}
+detectLocation();
+
+/* ═══════════════════════════════════════
    REVIEWS CAROUSEL
 ═══════════════════════════════════════ */
 (function () {
